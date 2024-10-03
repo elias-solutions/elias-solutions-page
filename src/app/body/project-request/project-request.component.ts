@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
+import { DialogComponent } from '../../common/dialog/dialog.component';
 
 @Component({
   selector: 'app-project-request',
@@ -15,7 +17,7 @@ export class ProjectRequestComponent {
   public contactForm!: FormGroup;
   public disable: boolean = false;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, public dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.contactForm = this.fb.group({
@@ -32,6 +34,13 @@ export class ProjectRequestComponent {
     this.contactForm.valid;
   }
 
+  private openDialog(message: string, dialogButton: string): void {
+    this.dialog.open(DialogComponent, {
+      width: '250px',
+      data: { message, dialogButton }
+    });
+  }
+
   onSubmit(): void {
     this.disable = true;
 
@@ -45,10 +54,10 @@ export class ProjectRequestComponent {
       emailjs.send(this.serviceId, this.templateId, templateParams, this.publicKey)
         .then((response: EmailJSResponseStatus) => {
           this.disable = false;
-          window.alert('SUCCESS! ' + response.status);
+          this.openDialog('message sent successfully', 'close');
         }, (error) => {
           this.disable = false;
-          window.alert('FAILED...' + error.status);
+          this.openDialog('Error: '+ error.status + ' message sent failed!' , 'close');
         });
     }
   }

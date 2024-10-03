@@ -9,6 +9,8 @@ import { StartSideComponent } from './body/start-side/start-side.component';
 import { ImpressumComponent } from './body/impressum/impressum.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProjectRequestComponent } from './body/project-request/project-request.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { DialogComponent } from './common/dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,7 @@ import { ProjectRequestComponent } from './body/project-request/project-request.
     StartSideComponent,
     ImpressumComponent,
     ProjectRequestComponent,
+    DialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,9 @@ import { ProjectRequestComponent } from './body/project-request/project-request.
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync('noop')
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
