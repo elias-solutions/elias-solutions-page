@@ -1,0 +1,32 @@
+.header-container {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the text horizontally */
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Ensure it stays above other content */
+  font-family: 'Times New Roman', Times, serif;
+
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the text horizontally */
+  position: relative;
+}
+
+.header-text h1 {
+  margin: 0;
+  position: relative;
+}
+
+.header-text p {
+  margin: 0;
+  position: absolute;
+  right: 0;
+  bottom: -20px; /* Adjust this value to position it correctly */
+}

@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+  }
+  
+  app-header {
+    background-color: black;
+    color: white;
+    padding: 20px;
+  }
+  
+  app-navigation {
+    background-color: #000000;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  app-navigation ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+  }
+  
+  app-navigation li {
+    display: inline; /* Inline the list items */
+    margin-right: 10px; /* Add some space between links */
+  }
+  
+  app-body {
+    flex: 1;
+  }
