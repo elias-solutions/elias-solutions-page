@@ -5,7 +5,9 @@ import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 import { DialogComponent } from '../../common/dialog/dialog.component';
 
 interface ContactForm {
-  name: FormControl<string | null>;
+  firstName: FormControl<string | null>;
+  lastName: FormControl<string | null>;
+  phone: FormControl<string | null>;
   email: FormControl<string | null>;
   message: FormControl<string | null>;
 }
@@ -27,24 +29,21 @@ export class ProjectRequestComponent {
 
   ngOnInit(): void {
     this.contactForm = this.fb.group<ContactForm>({
-      name: new FormControl('', Validators.required),
+      firstName: new FormControl('', Validators.required),
+      lastName: new FormControl('', Validators.required),
+      phone: new FormControl('', [Validators.required, Validators.pattern('^[0-9]{10}$')]),
       email: new FormControl('', [Validators.required, Validators.email]),
       message: new FormControl('', Validators.required)
     });
   }
 
   validate() : boolean {
-    return this.contactForm.controls.name.value !== '' &&
+    return this.contactForm.controls.firstName.value !== '' &&
+    this.contactForm.controls.lastName.value !== '' &&
+    this.contactForm.controls.phone.value !== '' &&
     this.contactForm.controls.email.value !== '' &&
     this.contactForm.controls.message.value !== '' &&
     this.contactForm.valid;
-  }
-
-  private openDialog(message: string, dialogButton: string): void {
-    this.dialog.open(DialogComponent, {
-      width: '250px',
-      data: { message, dialogButton }
-    });
   }
 
   onSubmit(): void {
@@ -52,7 +51,9 @@ export class ProjectRequestComponent {
 
     if (this.contactForm.valid) {
       const templateParams = {
-        name: this.contactForm.value.name,
+        firstName: this.contactForm.value.firstName,
+        lastName: this.contactForm.value.lastName,
+        phone: this.contactForm.value.phone,
         email: this.contactForm.value.email,
         message: this.contactForm.value.message
       };
@@ -78,5 +79,12 @@ export class ProjectRequestComponent {
     }
 
     return false;
+  }
+
+  private openDialog(message: string, dialogButton: string): void {
+    this.dialog.open(DialogComponent, {
+      width: '250px',
+      data: { message, dialogButton }
+    });
   }
 }
