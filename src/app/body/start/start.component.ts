@@ -3,10 +3,10 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-start-side',
-  templateUrl: './start-side.component.html',
-  styleUrls: ['./start-side.component.scss']
+  templateUrl: './start.component.html',
+  styleUrls: ['./start.component.scss']
 })
-export class StartSideComponent {
+export class StartComponent {
 
   constructor(private router: Router) {}
 

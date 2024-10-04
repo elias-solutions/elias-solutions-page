@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { StartSideComponent } from './body/start-side/start-side.component';
+import { StartComponent } from './body/start/start.component';
 import { ImpressumComponent } from './body/impressum/impressum.component';
 import { ProjectRequestComponent } from './body/project-request/project-request.component';
 
 const routes: Routes = [
-  { path: 'start-side', component: StartSideComponent },
+  { path: 'start', component: StartComponent },
   { path: 'impressum', component: ImpressumComponent },
   { path: 'project-request', component: ProjectRequestComponent },
-  { path: '', redirectTo: '/start-side', pathMatch: 'full' } // Default route
+  { path: '', redirectTo: '/start', pathMatch: 'full' } // Default route
 ];
 
 @NgModule({

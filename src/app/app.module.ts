@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { BodyComponent } from './body/body.component';
-import { StartSideComponent } from './body/start-side/start-side.component';
+import { StartComponent } from './body/start/start.component';
 import { ImpressumComponent } from './body/impressum/impressum.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProjectRequestComponent } from './body/project-request/project-request.component';
@@ -18,7 +18,7 @@ import { DialogComponent } from './common/dialog/dialog.component';
     HeaderComponent,
     NavigationComponent,
     BodyComponent,
-    StartSideComponent,
+    StartComponent,
     ImpressumComponent,
     ProjectRequestComponent,
     DialogComponent,
