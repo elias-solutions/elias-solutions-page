@@ -38,12 +38,17 @@ export class ProjectRequestComponent {
   }
 
   validate() : boolean {
-    return this.contactForm.controls.firstName.value !== '' &&
+    let isValid = this.contactForm.controls.firstName.value !== '' &&
     this.contactForm.controls.lastName.value !== '' &&
     this.contactForm.controls.phone.value !== '' &&
     this.contactForm.controls.email.value !== '' &&
-    this.contactForm.controls.message.value !== '' &&
-    this.contactForm.valid;
+    this.contactForm.controls.message.value !== '';
+    
+    return isValid && this.contactForm.valid;
+  }
+
+  isFieldInvalid(field: string): boolean | undefined {
+    return !this.contactForm.get(field)?.valid && this.contactForm.get(field)?.touched;
   }
 
   onSubmit(): void {
