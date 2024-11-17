@@ -38,7 +38,8 @@ nav a {
   transition: background-color 0.3s, color 0.3s; /* Smooth transition */
 }
 
-nav a:hover {
+nav a:hover,
+nav a.active {  
   background-color: black; /* Change background to black on hover */
   color: white; /* Change text color to white on hover */
 }
