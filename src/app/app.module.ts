@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProjectRequestComponent } from './body/project-request/project-request.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { DialogComponent } from './common/dialog/dialog.component';
+import { ContactComponent } from './body/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { DialogComponent } from './common/dialog/dialog.component';
     ImpressumComponent,
     ProjectRequestComponent,
     DialogComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
