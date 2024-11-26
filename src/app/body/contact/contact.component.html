@@ -1,51 +1,23 @@
-<form class="row g-3 needs-validation" novalidate>
-    <div class="col-md-4">
+<form class="row g-3 needs-validation" [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="col-md-6">
       <label for="validationCustom01" class="form-label">First name</label>
-      <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
-      <div class="valid-feedback">
-        Looks good!
-      </div>
-    </div>
-    <div class="col-md-4">
-      <label for="validationCustom02" class="form-label">Last name</label>
-      <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
-      <div class="valid-feedback">
-        Looks good!
-      </div>
-    </div>
-    <div class="col-md-4">
-      <label for="validationCustomUsername" class="form-label">Username</label>
-      <div class="input-group has-validation">
-        <span class="input-group-text" id="inputGroupPrepend">(a)</span>
-        <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-        <div class="invalid-feedback">
-          Please choose a username.
-        </div>
-      </div>
+      <input type="text" class="form-control" formControlName="firstName" id="validationCustom01" (change)="validate()" [ngClass]="{'is-valid': isFieldValid('firstName'), 'is-invalid': isFieldInValid('firstName')}" required>
     </div>
     <div class="col-md-6">
-      <label for="validationCustom03" class="form-label">City</label>
-      <input type="text" class="form-control" id="validationCustom03" required>
-      <div class="invalid-feedback">
-        Please provide a valid city.
-      </div>
+      <label for="validationCustom02" class="form-label">Last name</label>
+      <input type="text" class="form-control" formControlName="lastName" id="validationCustom01" (change)="validate()" [ngClass]="{'is-valid': isFieldValid('lastName'), 'is-invalid': isFieldInValid('lastName')}" required>
     </div>
-    <div class="col-md-3">
-      <label for="validationCustom04" class="form-label">State</label>
-      <select class="form-select" id="validationCustom04" required>
-        <option selected disabled value="">Choose...</option>
-        <option>...</option>
-      </select>
-      <div class="invalid-feedback">
-        Please select a valid state.
-      </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="text" class="form-control" formControlName="email" id="validationCustom01" (change)="validate()" [ngClass]="{'is-valid': isFieldValid('email'), 'is-invalid': isFieldInValid('email')}" required>
     </div>
-    <div class="col-md-3">
-      <label for="validationCustom05" class="form-label">Zip</label>
-      <input type="text" class="form-control" id="validationCustom05" required>
-      <div class="invalid-feedback">
-        Please provide a valid zip.
-      </div>
+    <div class="col-md-4">
+      <label for="validationCustom03" class="form-label">Phone</label>
+      <input type="text" class="form-control" formControlName="phone" id="validationCustom01" (change)="validate()" [ngClass]="{'is-valid': isFieldValid('phone'), 'is-invalid': isFieldInValid('phone')}" required>
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+        <input type="text" class="form-control" formControlName="message" id="validationCustom01" (change)="validate()" [ngClass]="{'is-valid': isFieldValid('message'), 'is-invalid': isFieldInValid('message')}" required>
     </div>
     <div class="col-12">
       <div class="form-check">
@@ -59,6 +31,8 @@
       </div>
     </div>
     <div class="col-12">
-      <button class="btn btn-primary" type="submit">Submit form</button>
+      <button class="btn btn-primary" type="submit" [disabled]="disableSubmit()" on>submit</button>
     </div>
   </form>
+
+  
