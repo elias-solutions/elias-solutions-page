@@ -21,13 +21,10 @@
     </div>
     <div class="col-12">
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+        <input class="form-check-input" type="checkbox" value="" formControlName="terms" id="invalidCheck" [ngClass]="{'is-valid': isFieldValid('terms'), 'is-invalid': isFieldInValid('terms')}" required>
         <label class="form-check-label" for="invalidCheck">
           Agree to terms and conditions
         </label>
-        <div class="invalid-feedback">
-          You must agree before submitting.
-        </div>
       </div>
     </div>
     <div class="col-12">

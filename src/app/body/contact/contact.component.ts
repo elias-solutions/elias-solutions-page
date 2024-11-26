@@ -10,6 +10,7 @@ interface ContactForm {
   phone: FormControl<string | null>;
   email: FormControl<string | null>;
   message: FormControl<string | null>;
+  terms: FormControl<boolean | null>;
 }
 
 @Component({
@@ -34,7 +35,8 @@ export class ContactComponent implements OnInit {
       lastName: new FormControl('', Validators.required),
       phone: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required, Validators.email]),
-      message: new FormControl('', Validators.required)
+      message: new FormControl('', Validators.required),
+      terms: new FormControl(false, Validators.requiredTrue)
     });
   }
 
@@ -66,7 +68,8 @@ export class ContactComponent implements OnInit {
     this.contactForm.controls.lastName.value !== '' &&
     this.contactForm.controls.phone.value !== '' &&
     this.contactForm.controls.email.value !== '' &&
-    this.contactForm.controls.message.value !== '';
+    this.contactForm.controls.message.value !== ''&&
+    this.contactForm.controls.terms.value === true;
     
     return isValid && this.contactForm.valid;
   }
