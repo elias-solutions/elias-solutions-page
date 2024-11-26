@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogComponent } from '../../common/dialog/dialog.component';
+import { DialogComponent } from '@common/dialog/dialog.component';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 
 interface ContactForm {
