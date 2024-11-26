@@ -8,7 +8,6 @@ import { BodyComponent } from './body/body.component';
 import { StartComponent } from './body/start/start.component';
 import { ImpressumComponent } from './body/impressum/impressum.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ProjectRequestComponent } from './body/project-request/project-request.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { DialogComponent } from './common/dialog/dialog.component';
 import { ContactComponent } from './body/contact/contact.component';
@@ -21,7 +20,6 @@ import { ContactComponent } from './body/contact/contact.component';
     BodyComponent,
     StartComponent,
     ImpressumComponent,
-    ProjectRequestComponent,
     DialogComponent,
     ContactComponent,
   ],

@@ -17,7 +17,7 @@
     </div>
     <div class="form-group">
         <label for="exampleFormControlTextarea1" class="form-label">Message</label>
-        <input type="text" class="form-control" formControlName="message" id="validationCustom01" (change)="validate()" [ngClass]="{'is-valid': isFieldValid('message'), 'is-invalid': isFieldInValid('message')}" required>
+        <textarea class="form-control" formControlName="message" id="validationCustom01" (change)="validate()" [ngClass]="{'is-valid': isFieldValid('message'), 'is-invalid': isFieldInValid('message')}" required></textarea>
     </div>
     <div class="col-12">
       <div class="form-check">
