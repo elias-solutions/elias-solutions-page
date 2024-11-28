@@ -1,8 +1,8 @@
 {
     "body.start.title": "Ihr Partner für Microsoft C#, Angular und Azure-Dienstleistungen",
     "body.start.description": "Wir sind der richtige Partner, wenn es um professionelle Dienstleistungen rund um Microsoft C#, Angular und die Azure-Cloud geht. Begriffe wie SOLID-Prinzipien, Design Patterns wie Repository oder Tools wie MediatR sind für uns nicht nur Schlagworte – wir leben und arbeiten danach. Unser Team setzt auf modernste Technologien und bewährte Praktiken, um Ihnen nachhaltige, leistungsstarke und skalierbare Lösungen zu bieten. Vertrauen Sie auf unsere Expertise und Leidenschaft für sauberen Code und effiziente Softwarearchitekturen!",
-    "body.start.description.2": "Setzen sie sich mit uns in Verbindung",
-    "body.start.request": "projekt anfrage",
+    "body.start.description.2": "Setzen sie sich mit uns in Verbindung!",
+    "body.start.request": "projektanfrage",
     "contact.form.firstname": "Vorname",
     "contact.form.lastname": "Nachname",
     "contact.form.email": "Email",
@@ -27,5 +27,5 @@
     "impressum.sub.title.7": "Haftungsausschluss:",
     "impressum.sub.detail.7": "Die Elias Solutions GmbH übernimmt keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.",
     "impressum.sub.title.8": "Urheberrecht:",
-    "impressum.sub.detail.": "Die Inhalte dieser Webseite sind urheberrechtlich geschützt. Eine Vervielfältigung, Bearbeitung, Verbreitung oder jede Art der Verwertung bedarf der schriftlichen Zustimmung der Elias Solutions GmbH."
+    "impressum.sub.detail.8": "Die Inhalte dieser Webseite sind urheberrechtlich geschützt. Eine Vervielfältigung, Bearbeitung, Verbreitung oder jede Art der Verwertung bedarf der schriftlichen Zustimmung der Elias Solutions GmbH."
 }
