@@ -40,3 +40,14 @@ $elias-solutions-theme: mat.define-light-theme((
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+.btn.btn-primary {
+  background-color: black !important;
+  border-color: black !important;
+}
+
+.btn.btn-primary:hover,
+.btn.btn-primary:focus,
+.btn.btn-primary:active {
+  background-color: black !important;
+  border-color: black !important;
+}
