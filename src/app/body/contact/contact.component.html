@@ -1,34 +1,34 @@
 <form class="row g-3 needs-validation" [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
     <div class="col-md-6">
-      <label for="validationCustom01" class="form-label">First name</label>
+      <label for="validationCustom01" class="form-label">{{ 'contact.form.firstname' | translate }}</label>
       <input type="text" class="form-control" formControlName="firstName" id="validationCustom01" (change)="validate()" [ngClass]="{'is-valid': isFieldValid('firstName'), 'is-invalid': isFieldInValid('firstName')}" required>
     </div>
     <div class="col-md-6">
-      <label for="validationCustom02" class="form-label">Last name</label>
+      <label for="validationCustom02" class="form-label">{{ 'contact.form.lastname' | translate }}</label>
       <input type="text" class="form-control" formControlName="lastName" id="validationCustom01" (change)="validate()" [ngClass]="{'is-valid': isFieldValid('lastName'), 'is-invalid': isFieldInValid('lastName')}" required>
     </div>
     <div class="form-group">
-      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <label for="exampleInputEmail1" class="form-label">{{ 'contact.form.email' | translate }}</label>
       <input type="text" class="form-control" formControlName="email" id="validationCustom01" (change)="validate()" [ngClass]="{'is-valid': isFieldValid('email'), 'is-invalid': isFieldInValid('email')}" required>
     </div>
     <div class="col-md-4">
-      <label for="validationCustom03" class="form-label">Phone</label>
+      <label for="validationCustom03" class="form-label">{{ 'contact.form.phone' | translate }}</label>
       <input type="text" class="form-control" formControlName="phone" id="validationCustom01" (change)="validate()" [ngClass]="{'is-valid': isFieldValid('phone'), 'is-invalid': isFieldInValid('phone')}" required>
     </div>
     <div class="form-group">
-        <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+        <label for="exampleFormControlTextarea1" class="form-label">{{ 'contact.form.message' | translate }}</label>
         <textarea class="form-control" formControlName="message" id="validationCustom01" (change)="validate()" [ngClass]="{'is-valid': isFieldValid('message'), 'is-invalid': isFieldInValid('message')}" required></textarea>
     </div>
     <div class="col-12">
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" formControlName="terms" id="invalidCheck" [ngClass]="{'is-valid': isFieldValid('terms'), 'is-invalid': isFieldInValid('terms')}" required>
         <label class="form-check-label" for="invalidCheck">
-          Agree to terms and conditions
+          {{ 'contact.form.terms' | translate }}        
         </label>
       </div>
     </div>
     <div class="col-12">
-      <button class="btn btn-primary" type="submit" [disabled]="disableSubmit()" on>submit</button>
+      <button class="btn btn-primary" type="submit" [disabled]="disableSubmit()" on>{{ 'contact.form.submit' | translate }}</button>
     </div>
   </form>
 

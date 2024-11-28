@@ -11,6 +11,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { DialogComponent } from './common/dialog/dialog.component';
 import { ContactComponent } from './body/contact/contact.component';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,15 @@ import { ContactComponent } from './body/contact/contact.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    TranslateModule.forRoot( {
+      loader: {
+        provide: TranslateLoader,
+        useClass: TranslateHttpLoader,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [
     provideAnimationsAsync('noop')

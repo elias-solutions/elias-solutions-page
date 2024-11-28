@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogComponent } from '@common/dialog/dialog.component';
+import { TranslateService } from '@ngx-translate/core';
+import { DialogComponent } from '../../common/dialog/dialog.component';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 
 interface ContactForm {
@@ -27,9 +28,12 @@ export class ContactComponent implements OnInit {
   public contactForm!: FormGroup<ContactForm>;
   public disable: boolean = false;
 
-  constructor(private fb: FormBuilder, public dialog: MatDialog) {}
-
+  constructor(private fb: FormBuilder, public dialog: MatDialog, private translate: TranslateService) {
+  }
+  
   ngOnInit(): void {
+    this.translate.use('en');
+    
     this.contactForm = this.fb.group<ContactForm>({
       firstName: new FormControl('', Validators.required),
       lastName: new FormControl('', Validators.required),
